@@ -17,4 +17,16 @@ describe Oystercard do
     subject.top_up(10)
     expect(subject.deduct(4)).to eq 6
   end    
+
+  it 'shows whether the oystercard is being used on a journey' do
+      expect(subject.in_journey?).to eq false
+  end
+
+  it 'shows that the oystercard is in an active journey after toucing in' do
+      expect(subject.touch_in).to eq true
+  end
+
+  it 'shows that the oystercard is not in a journey after touching out' do
+      expect(subject.touch_out).to eq false
+  end
 end
