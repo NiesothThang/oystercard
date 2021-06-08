@@ -9,5 +9,9 @@ class Oystercard
       raise "unable to top-up: max limit is £#{MAX_BALANCE}" if (@balance + amount) > MAX_BALANCE
       @balance += (amount)
     end
+
+    def deduct(fare)
+      @balance -= fare
+    end
 attr_reader :balance
 end
